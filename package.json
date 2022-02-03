@@ -1,10 +1,31 @@
 {
 	"name": "rollup-plugin-css-hmr",
-	"version": "0.1.0",
-	"type": "module",
-	"main": "index.js",
+	"version": "0.2.0",
+	"main": "dist/rollup-plugin-css-hmr.es.js",
+	"exports": {
+		".": {
+			"import": "./dist/rollup-plugin-css-hmr.es.js",
+			"require": "./dist/rollup-plugin-css-hmr.umd.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
 	"description": "A small CSS helper plugin for Vite/Rollup to trigger hot module reloading of dependent tracked modules.",
-	"keywords": ["Vite", "Rollup", "CSS", "HMR", "Plugin"],
+	"keywords": [
+		"Vite",
+		"Rollup",
+		"CSS",
+		"HMR",
+		"Plugin"
+	],
+	"scripts": {
+		"build": "vite build",
+		"prepublishOnly": "npm run build"
+	},
+	"devDependencies": {
+		"vite": "^2.7.10"
+	},
 	"homepage": "https://github.com/auzmartist/rollup-plugin-css-hmr",
 	"bugs": {
 		"url": "https://github.com/auzmartist/rollup-plugin-css-hmr/issues"

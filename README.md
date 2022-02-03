@@ -3,6 +3,8 @@
 
 ## Usage
 ```js
+// CommonJS import is supported if necessary
+// const CssHmr = require('rollup-plugin-css-hmr')
 import CssHmr from 'rollup-plugin-css-hmr'
 
 export default {

@@ -5,6 +5,7 @@ import path from 'path'
  * @param {Function} ext an extension to hot reload if its matching css changes
  */
 export default function CssHmr(ext) {
+	console.log('path', path)
 	const matchFn = (id) => path.basename(id)?.indexOf(ext) > -1
 
 	return {
