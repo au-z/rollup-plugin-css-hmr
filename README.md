@@ -1,18 +1,19 @@
 # rollup-plugin-css-hmr
+
 > A small CSS helper plugin for Vite/Rollup to trigger hot module reloading of dependent tracked modules.
 
 ## Usage
+
 ```js
 // CommonJS import is supported if necessary
 // const CssHmr = require('rollup-plugin-css-hmr')
 import CssHmr from 'rollup-plugin-css-hmr'
 
 export default {
-  plugins: [
-    CssHmr('.ts')
-  ]
+  plugins: [CssHmr('.ts')],
 }
 ```
+
 When a CSS [name] file change is made, any [name].ts file will also be hot reloaded.
 
 ## Documentation
@@ -30,4 +31,3 @@ export default function CssHmr(ext) {
 ## Contributing
 
 PRs welcome!
-

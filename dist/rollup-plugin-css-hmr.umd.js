@@ -1,12 +1,58 @@
-(function(e,s){typeof exports=="object"&&typeof module!="undefined"?module.exports=s():typeof define=="function"&&define.amd?define(s):(e=typeof globalThis!="undefined"?globalThis:e||self,e["rollup-plugin-css-hmr"]=s())})(this,function(){"use strict";var e={};function s(f){console.log("path",e);const m=t=>{var n;return((n=e.basename(t))==null?void 0:n.indexOf(f))>-1};return{name:"css-hmr",handleHotUpdate({file:t,modules:n,server:a}){const o=e.extname(t),u=e.basename(t,o);o===".css"&&a.ws.send({type:"custom",event:u,data:{}})},transform(t,n){if(!m(n))return;const a=e.extname(n),o=e.basename(n,a);return{code:t+`
+;(function (s, o) {
+  typeof exports == 'object' && typeof module != 'undefined'
+    ? (module.exports = o())
+    : typeof define == 'function' && define.amd
+    ? define(o)
+    : ((s = typeof globalThis != 'undefined' ? globalThis : s || self),
+      (s['rollup-plugin-css-hmr'] = o()))
+})(this, function () {
+  'use strict'
+  const s = new RegExp('^[\\/](.+[\\//])*((.+).(.+))$', 'gi')
+  function o(c) {
+    const e = s.exec(c)
+    return console.log('match: ', e), e == null ? void 0 : e[2]
+  }
+  function u(c) {
+    const e = s.exec(c)
+    return console.log('match: ', e), e == null ? void 0 : e[4]
+  }
+  function l(c) {
+    const e = (t) => {
+      var n
+      return ((n = o(t)) == null ? void 0 : n.indexOf(c)) > -1
+    }
+    return {
+      name: 'css-hmr',
+      handleHotUpdate({ file: t, modules: n, server: f }) {
+        console.log('HOT')
+        const r = u(t),
+          i = o(t)
+        r === '.css' && f.ws.send({ type: 'custom', event: i, data: {} })
+      },
+      transform(t, n) {
+        if ((console.log('trans', t, n), !e(n))) return
+        u(n)
+        const f = o(n)
+        return {
+          code:
+            t +
+            `
 
 
-					// -----
-					//  HMR
-					// -----
-					if(false) {
-						false.on('${o}', () => {
-							false.invalidate();
-						})
-					}
-				`,map:null,enforce:"post"}}}}return s});
+          // -----
+          //  HMR
+          // -----
+          if(false) {
+            false.on('${f}', () => {
+              false.invalidate();
+            })
+          }
+        `,
+          map: null,
+          enforce: 'post',
+        }
+      },
+    }
+  }
+  return l
+})

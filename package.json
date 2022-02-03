@@ -1,36 +1,38 @@
 {
-	"name": "rollup-plugin-css-hmr",
-	"version": "0.2.0",
-	"main": "dist/rollup-plugin-css-hmr.es.js",
-	"exports": {
-		".": {
-			"import": "./dist/rollup-plugin-css-hmr.es.js",
-			"require": "./dist/rollup-plugin-css-hmr.umd.js"
-		}
-	},
-	"files": [
-		"dist"
-	],
-	"description": "A small CSS helper plugin for Vite/Rollup to trigger hot module reloading of dependent tracked modules.",
-	"keywords": [
-		"Vite",
-		"Rollup",
-		"CSS",
-		"HMR",
-		"Plugin"
-	],
-	"scripts": {
-		"build": "vite build",
-		"prepublishOnly": "npm run build"
-	},
-	"devDependencies": {
-		"vite": "^2.7.10"
-	},
-	"homepage": "https://github.com/auzmartist/rollup-plugin-css-hmr",
-	"bugs": {
-		"url": "https://github.com/auzmartist/rollup-plugin-css-hmr/issues"
-	},
-	"repository": "rollup-plugin-css-hmr",
-	"license": "CC0-1.0",
-	"author": "Austin Martin (https://github.com/auzmartist/rollup-plugin-css-hmr)"
+  "name": "rollup-plugin-css-hmr",
+  "version": "0.2.0",
+  "main": "./dist/rollup-plugin-css-hmr.es.js",
+  "module": "./dist/rollup-plugin-css-hmr.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/rollup-plugin-css-hmr.es.js",
+      "require": "./dist/rollup-plugin-css-hmr.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "description": "A small CSS helper plugin for Vite/Rollup to trigger hot module reloading of dependent tracked modules.",
+  "keywords": [
+    "Vite",
+    "Rollup",
+    "CSS",
+    "HMR",
+    "Plugin"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "rollup-plugin-polyfill-node": "^0.8.0",
+    "vite": "^2.7.13"
+  },
+  "homepage": "https://github.com/auzmartist/rollup-plugin-css-hmr",
+  "bugs": {
+    "url": "https://github.com/auzmartist/rollup-plugin-css-hmr/issues"
+  },
+  "repository": "rollup-plugin-css-hmr",
+  "license": "CC0-1.0",
+  "author": "Austin Martin (https://github.com/auzmartist/rollup-plugin-css-hmr)"
 }
