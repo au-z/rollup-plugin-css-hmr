@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-css-hmr",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "main": "./dist/rollup-plugin-css-hmr.es.js",
   "module": "./dist/rollup-plugin-css-hmr.es.js",
   "types": "./dist/types/index.d.ts",
@@ -16,6 +16,9 @@
     "HMR",
     "Plugin"
   ],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/auzmartist/rollup-plugin-css-hmr",
   "bugs": {
     "url": "https://github.com/auzmartist/rollup-plugin-css-hmr/issues"
@@ -26,11 +29,15 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test:esm": "cross-env VITE_PLUGINS_ESM=true vite -c ./test/vite.config.ts",
+    "test:cjs": "cross-env VITE_PLUGINS_ESM=false vite -c ./test/vite.config.ts"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
+    "cross-env": "^7.0.3",
+    "hybrids": "^7.0.5",
     "typescript": "^4.6.3",
-    "vite": "^2.8.6"
+    "vite": "^2.9.1"
   }
 }

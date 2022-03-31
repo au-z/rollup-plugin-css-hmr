@@ -1,2 +1,5 @@
 node_modules
 dist
+
+rollup-plugin-css-hmr-*
+rollup-plugin-css-hmr-*.tgz
