@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
-import CssHmr from "../dist/rollup-plugin-css-hmr.es";
-const CssHmrCJS = require("../dist/rollup-plugin-css-hmr.cjs");
+import CssHMR from "rollup-plugin-css-hmr";
 
 export default defineConfig(() => {
   return {
-    plugins: [process.env.VITE_PLUGINS_ESM ? CssHmr(".ts") : CssHmrCJS(".ts")],
+    plugins: [CssHMR(".ts")],
     root: "test",
   };
 });

@@ -3,7 +3,7 @@ import path from "path";
  * Workaround for aggressive static string replacement (vite)
  * https://vitejs.dev/guide/env-and-mode.html#production-replacement
  */
-const importMetaHot = ["import", "meta", "hot"].join(".");
+const import_meta_hot = ["import", "meta", "hot"].join(".");
 
 /**
  * Triggers a page reload when a matching CSS filename is changed
@@ -33,9 +33,9 @@ export default function CssHmr(ext) {
 // -----
 //  HMR
 // -----
-if(${importMetaHot}) {
-  ${importMetaHot}.on('${name}', () => {
-    ${importMetaHot}.invalidate();
+if(${import_meta_hot}) {
+  ${import_meta_hot}.on('${name}', () => {
+    ${import_meta_hot}.invalidate();
   })
 }`,
         map: null,
