@@ -14,6 +14,16 @@ export default {
 
 When a CSS [name] file change is made, any [name].ts file will also be hot reloaded.
 
+### ESM/UMD
+
+Optionally, you may specify a specific build of the lib:
+
+```js
+import CssHmrESM from "rollup-plugin-css-hmr/esm";
+// or
+const CssHmrUMD = require("rollup-plugin-css-hmr/umd");
+```
+
 ## Documentation
 
 ```js

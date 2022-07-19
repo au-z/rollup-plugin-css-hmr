@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
-import CssHMR from "rollup-plugin-css-hmr";
+import CssHmr from "rollup-plugin-css-hmr/esm";
 
 export default defineConfig(() => {
   return {
-    plugins: [CssHMR(".ts")],
+    plugins: [CssHmr(".ts")],
     root: "test",
   };
 });

@@ -27,9 +27,7 @@ export default function CssHmr(ext) {
       const ext = path.extname(id);
       const name = path.basename(id, ext);
       return {
-        code:
-          src +
-          `\n\n
+        code: `${src}\n\n
 // -----
 //  HMR
 // -----
