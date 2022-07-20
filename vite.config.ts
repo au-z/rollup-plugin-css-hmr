@@ -6,7 +6,7 @@ export default defineConfig({
     lib: {
       entry: "./src/index.ts",
       name: "CssHMR",
-      formats: ["es", "umd"],
+      formats: ["es", "umd", "cjs"],
     },
     rollupOptions: {
       external: ["path"],
