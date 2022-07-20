@@ -1,23 +1,23 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^17.0.23
+  '@types/node': ^18.0.6
   cross-env: ^7.0.3
-  hybrids: ^7.0.5
-  typescript: ^4.6.3
-  vite: ^2.9.9
+  hybrids: ^8.0.10
+  typescript: ^4.7.4
+  vite: ^3.0.2
 
 devDependencies:
-  '@types/node': 17.0.45
+  '@types/node': 18.0.6
   cross-env: 7.0.3
-  hybrids: 7.1.0
+  hybrids: 8.0.10
   typescript: 4.7.4
-  vite: 2.9.13
+  vite: 3.0.2
 
 packages:
 
-  /@types/node/17.0.45:
-    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
     dev: true
 
   /cross-env/7.0.3:
@@ -264,8 +264,9 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /hybrids/7.1.0:
-    resolution: {integrity: sha512-ZPguGrSfulNM92+e2MyvtFdCDEW4gwi0atHr+GLrD4vc+kLWbYkBdVvYSKXNwMEa1WNfO/6fcegZSd2FHuC/kQ==}
+  /hybrids/8.0.10:
+    resolution: {integrity: sha512-VauIc8eaIGwUokttFOqxRAokYG47XiYjgfMCkKMr7d6k0Sz57iTZokISZU/lJgTvlTy6UiXPpjS7TwqbbmwxLg==}
+    hasBin: true
     dev: true
 
   /is-core-module/2.9.0:
@@ -351,20 +352,23 @@ packages:
     hasBin: true
     dev: true
 
-  /vite/2.9.13:
-    resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
-    engines: {node: '>=12.2.0'}
+  /vite/3.0.2:
+    resolution: {integrity: sha512-TAqydxW/w0U5AoL5AsD9DApTvGb2iNbGs3sN4u2VdT1GFkQVUfgUldt+t08TZgi23uIauh1TUOQJALduo9GXqw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      terser: ^5.4.0
     peerDependenciesMeta:
       less:
         optional: true
       sass:
         optional: true
       stylus:
+        optional: true
+      terser:
         optional: true
     dependencies:
       esbuild: 0.14.47
