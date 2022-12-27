@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  rollup-plugin-css-hmr: ./..
+
+devDependencies:
+  rollup-plugin-css-hmr: link:..

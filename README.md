@@ -8,7 +8,26 @@
 import CssHmr from "rollup-plugin-css-hmr";
 
 export default {
-  plugins: [CssHmr(".ts")],
+  plugins: [
+    CssHmr({
+      // minimally
+      '*': {}
+      // defaults
+      "*": {
+        ext: ".ts",
+        glob: "*",
+        event: (id, { ext, name }) => name,
+        page: false,
+      },
+      // customized
+      "src/css/**/*": {
+        ext: '.ts',
+        glob: 'src/**/*',
+        event: (id, {ex, name}) => `${name}${ext}`,
+        page: true, // allow page reloads
+      }
+    }),
+  ],
 };
 ```
 
@@ -24,18 +43,6 @@ import CssHmrESM from "rollup-plugin-css-hmr/esm";
 import CssHmrUMD from "rollup-plugin-css-hmr/umd";
 // or
 const CssHmrCJS = require("rollup-plugin-css-hmr/cjs");
-```
-
-## Documentation
-
-```js
-/**
- * Triggers a page reload when a matching CSS filename is changed
- * @param {Function} ext an extension to hot reload if its matching css changes
- */
-export default function CssHmr(ext) {
-  // ...
-}
 ```
 
 ## Contributing

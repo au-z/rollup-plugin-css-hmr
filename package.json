@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-css-hmr",
-  "version": "0.3.4",
+  "version": "1.0.0",
   "type": "module",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/rollup-plugin-css-hmr.umd.cjs",
@@ -32,17 +32,65 @@
   "license": "CC0-1.0",
   "author": "Austin Martin (https://github.com/auzmartist/rollup-plugin-css-hmr)",
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite",
+    "build": "wireit",
+    "tsc": "wireit",
+    "dev": "wireit",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build && cd test && npm i",
-    "test": "cross-env vite -c ./test/vite.config.ts"
+    "test": "wireit"
+  },
+  "wireit": {
+    "test": {
+      "command": "cross-env vite -c ./test/vite.config.ts",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "build": {
+      "command": "vite build",
+      "dependencies": [
+        "tsc"
+      ],
+      "files": [
+        "src/**",
+        "vite.config.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "dist/**"
+      ]
+    },
+    "dev": {
+      "command": "vite build --watch",
+      "files": [
+        "src/**",
+        "vite.config.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "dist/**"
+      ]
+    },
+    "tsc": {
+      "command": "tsc",
+      "files": [
+        "src/**",
+        "tsconfig.json"
+      ],
+      "output": [
+        "dist/types/**"
+      ]
+    }
+  },
+  "dependencies": {
+    "minimatch": "^5.1.2"
   },
   "devDependencies": {
-    "@types/node": "^18.0.6",
+    "@types/node": "^18.11.18",
     "cross-env": "^7.0.3",
-    "hybrids": "^8.0.10",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.2"
+    "hybrids": "^8.1.12",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3",
+    "wireit": "^0.9.2"
   }
 }

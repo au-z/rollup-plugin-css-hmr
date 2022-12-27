@@ -1,5 +1,5 @@
 import { define, html } from "hybrids";
-import styles from "./my-counter.css";
+import styles from "./my-counter.css?inline";
 
 export const MyCounter = define<any>({
   tag: "my-counter",
